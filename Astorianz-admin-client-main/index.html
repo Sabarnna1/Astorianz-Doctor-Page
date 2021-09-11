@@ -32,6 +32,7 @@
           <ul>
             <li><a class="nav-link scrollto active" href="#userlist">Doctors List</a></li>
             <li><a class="nav-link scrollto" href="#bookings">Appointments</a></li>
+            <li><a class="nav-link scrollto" href="#session">Session Details</a></li>
             <li><a class="nav-link scrollto" href="#add_doctors">Add Doctors</a></li>
           </ul>
           
@@ -130,8 +131,6 @@
                     <th>Patient Name</th>
                     <th>Status</th>
                     <th>Payment Mode</th>
-                    <th>Session Details</th>
-                    <th>Patient File</th>
                   </tr>
                   <tr>
                     <td>3698BI</td>
@@ -143,8 +142,6 @@
                     <td>Steve Smith</td>
                     <td>Attempted</td>
                     <td>Net Banking</td>
-                    <td>Diagnosed with depression</td>
-                    <td><button class="open-button" onclick="first_form()">1.pdf</button></td>
                   </tr>
                   <tr>
                     <td>3698BI</td>
@@ -156,8 +153,6 @@
                     <td>Sachin Tichkule</td>
                     <td>Not Attempted</td>
                     <td>Debit Card</td>
-                    <td>Diagnosed with hallucination</td>
-                    <td><button class="open-button" onclick="first_form()">2.pdf</button></td>
                   </tr>
                   <tr>
                     <td>3698BI</td>
@@ -169,8 +164,49 @@
                     <td>Bajrang Bali</td>
                     <td>Attempted</td>
                     <td>Credit Card</td>
-                    <td>Diagnosed with hypertension</td>
-                    <td><button class="open-button" onclick="first_form()">3.pdf</button></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="headings" id="session">
+              <h1>Sessions</h1>
+            </div>
+            <div class="tablebox">
+              <div style="overflow-x:auto;">
+                <table>
+                  <tr>
+                    <th>Appointment_ID</th>
+                    <th>Patient Name</th>
+                    <th>Session Details</th>
+                    <th>Patient File</th>
+                    <th>Update</th>
+                  </tr>
+                  <tr>
+                    <td>4563DRE</td>
+                    <td>Steve Smith</td>
+                    <td>Diagnosed with depression</td>
+                    <td><iframe src="http://infolab.stanford.edu/pub/papers/google.pdf#toolbar=0&navpanes=0&scrollbar=0" frameBorder="0" scrolling="auto" height="30%" width="80%"></iframe></td>
+                    <td><button class="open-button" onclick="first_form()">Update</button></td>
+                  </tr>
+                  <tr>
+                    <td>4563DRE</td>
+                    <td>Sachin Tichkule</td>
+                    <td>Diagnosed with hallucination</td>
+                    <td><embed
+                      src="http://infolab.stanford.edu/pub/papers/google.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                      type="application/pdf"
+                      frameBorder="0"
+                      scrolling="auto"
+                      height="100%"
+                    width="80%"></embed></td>
+                    <td><button class="open-button" onclick="first_form()">Update</button></td>
+                  </tr>
+                  <tr>
+                    <td>4563DRE</td>
+                    <td>Bajrang Bali</td>
+                    <td>Diagnosed with tension</td>
+                    <td><iframe src="http://infolab.stanford.edu/pub/papers/google.pdf#toolbar=0&navpanes=0&scrollbar=0" frameBorder="0" scrolling="auto" height="30%" width="80%"></iframe></td>
+                    <td><button class="open-button" onclick="first_form()">Update</button></td>
                   </tr>
                 </table>
               </div>
@@ -207,13 +243,14 @@
                   </tr>
                   <tr>
                     <td>1453FQ</td>
-                    <td>Alpha</td> 
+                    <td>Alpha</td>
                     <td>3</td>
                     <td>dd-mm-yyyy</td>
                     <td>Activated</td>
                     <td><button class="open-button" onclick="openForm()">Update</button></td>
                   </tr>
                 </table>
+                <button class="open-button" onclick="openForm1()"><b><span style="background-color: #ffc107">ADD NEW DOCTOR</span></b></button>
               </div>
             </div>
             <!-- next -->
@@ -246,21 +283,84 @@
               <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
             </form>
           </div>
+          <div class="form-popup" id="myForm1">
+            <form action="" class="form-container">
+              <label for="doctor_name"><b>Doctor Name</b></label>
+              <input type="text" placeholder="Name" name="doctorname">
+              
+              <label for="doctor_duration"><b>Duration</b></label>
+              <input type="number" placeholder="No. of months" name="doctor_duration" >
+              <label for="date_of_registration"><b>Date</b></label>
+              <input type="date" name="date" placeholder="date">
+              <label for="status"><b>Activation</b></label>
+              <select name="packagestatus" id="status">
+                <option value="Activate">Activate</option>
+                <option value="Deactivate">Deactivate</option>
+              </select>
+              <button type="submit" class="btn">Apply</button>
+              <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+          </div>
           <script>
           function openForm() {
           document.getElementById("myForm").style.display = "block";
+          }
+          function openForm1() {
+          document.getElementById("myForm1").style.display = "block";
           }
           
           function closeForm() {
           document.getElementById("myForm").style.display = "none";
           document.getElementById("first_form").style.display = "none";
+          document.getElementById("myForm1").style.display = "none";
           }
           function first_form(){
           document.getElementById("first_form").style.display = "block";
           }
           </script>
+          <footer id="footer">
+            <div class="footer-top">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-3 col-md-6 footer-contact">
+                    <h3>Konfidantee</h3>
+                    <p>
+                      Delhi<br>
+                      India <br><br>
+                      <strong>Phone:</strong> 9214864300<br>
+                      <strong>Email:</strong> info@konfidantee.com<br>
+                    </p>
+                  </div>
+                  <div class="col-lg-2 col-md-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                      <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                      <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                      <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                      <li><i class="bx bx-chevron-right"></i> <a href="#">Our Blogs</a></li>
+                      <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy Policy</a></li>
+                      <li><i class="bx bx-chevron-right"></i> <a href="#">FAQ</a></li>
+                      <li><i class="bx bx-chevron-right"></i> <a href="#">Terms and conditions</a></li>
+                      <li><i class="bx bx-chevron-right"></i> <a href="#">Follow Us</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-lg-4 col-md-6 footer-newsletter">
+                    <h4>Join With Us</h4>
+                    <p>Wanna come with us?</p>
+                    <form action="" method="post">
+                      <input type="email" name="email"><input type="submit" value="come on!">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
           <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-          
           <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
           <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
           <script src="assets/vendor/php-email-form/validate.js"></script>
